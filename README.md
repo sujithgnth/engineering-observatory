@@ -4,6 +4,9 @@
 
 # Engineering Observatory
 
+> [!IMPORTANT]
+> **Status: Work in progress.** The local desktop workflow and deterministic analysis core are usable today, but this is not a finished hosted product. Release signing, multi-tenant authorization, hosted isolation, and broader analyzer coverage remain active work.
+
 Engineering Observatory is a local-first developer tool for understanding the health and architecture of a TypeScript repository before changing it.
 
 I built it around a simple rule: **measure first, explain second**. Repository scanning, findings, scores, dependency paths, and performance results come from deterministic tools. AI is optional and can explain an existing finding, but it cannot invent evidence or change the result.
