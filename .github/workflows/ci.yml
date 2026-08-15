@@ -26,8 +26,8 @@ jobs:
       DATABASE_URL: postgres://observatory:observatory@127.0.0.1:5432/observatory
       RUN_DB_INTEGRATION_TESTS: "true"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22.19.0
           cache: npm
@@ -38,7 +38,7 @@ jobs:
       - run: npm run quality
       - name: Upload measured quality reports
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: frontend-quality-reports
           path: artifacts/
