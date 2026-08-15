@@ -4,6 +4,10 @@
 
 # Engineering Observatory
 
+<p align="center">
+  <strong>Languages:</strong> TypeScript · JavaScript · HTML · CSS · SQL · Prisma Schema
+</p>
+
 > [!IMPORTANT]
 > **Status: Work in progress.** The local desktop workflow and deterministic analysis core are usable today, but this is not a finished hosted product. Release signing, multi-tenant authorization, hosted isolation, and broader analyzer coverage remain active work.
 
