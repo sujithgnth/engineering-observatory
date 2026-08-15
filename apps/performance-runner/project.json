@@ -1,0 +1,29 @@
+{
+  "name": "performance-runner",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/performance-runner/src",
+  "tags": ["scope:performance", "type:app", "runtime:node"],
+  "implicitDependencies": ["performance-engine", "persistence", "shared-types"],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx watch --tsconfig apps/performance-runner/tsconfig.json apps/performance-runner/src/main.ts"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/performance-runner"],
+      "options": {
+        "command": "tsup apps/performance-runner/src/main.ts --format esm --platform node --sourcemap --out-dir dist/apps/performance-runner --clean"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p apps/performance-runner/tsconfig.json --noEmit"
+      }
+    }
+  }
+}

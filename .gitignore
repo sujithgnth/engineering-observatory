@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.prisma/
+libs/persistence/src/generated/prisma/
+coverage/
+.nx/
+.env
+.env.*
+!.env.example
+.observatory/
+playwright-report/
+test-results/
+artifacts/
+release/
+*.log
+.DS_Store

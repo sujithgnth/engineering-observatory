@@ -1,0 +1,32 @@
+{
+  "name": "backend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/backend/src",
+  "tags": ["scope:backend", "type:app", "runtime:node"],
+  "implicitDependencies": [
+    "ai-adapter",
+    "persistence",
+    "scanners",
+    "shared-types"
+  ],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx watch --tsconfig apps/backend/tsconfig.json apps/backend/src/main.ts"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/backend"],
+      "options": {
+        "command": "tsup apps/backend/src/main.ts --format esm --platform node --sourcemap --out-dir dist/apps/backend --clean"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": { "command": "tsc -p apps/backend/tsconfig.json --noEmit" }
+    }
+  }
+}

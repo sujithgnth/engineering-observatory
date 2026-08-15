@@ -1,0 +1,13 @@
+{
+  "name": "observatory-risk-fixture",
+  "private": true,
+  "dependencies": {
+    "@nestjs/core": "11.0.0",
+    "@types/node": "22.0.0",
+    "lodash": "4.17.20",
+    "mongoose": "8.0.0",
+    "pg": "8.0.0",
+    "react": "19.0.0",
+    "typescript": "5.9.0"
+  }
+}

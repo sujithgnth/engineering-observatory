@@ -1,0 +1,33 @@
+{
+  "name": "worker",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/worker/src",
+  "tags": ["scope:analysis", "type:app", "runtime:node"],
+  "implicitDependencies": [
+    "ai-adapter",
+    "analyzer-engine",
+    "persistence",
+    "scanners",
+    "shared-types"
+  ],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx watch --tsconfig apps/worker/tsconfig.json apps/worker/src/main.ts"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/worker"],
+      "options": {
+        "command": "tsup apps/worker/src/main.ts --format esm --platform node --sourcemap --out-dir dist/apps/worker --clean"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": { "command": "tsc -p apps/worker/tsconfig.json --noEmit" }
+    }
+  }
+}

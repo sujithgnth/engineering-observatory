@@ -1,0 +1,15 @@
+{
+  "name": "shared-types",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/shared-types/src",
+  "tags": ["scope:shared", "type:domain", "runtime:universal"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p libs/shared-types/tsconfig.json --noEmit"
+      }
+    }
+  }
+}

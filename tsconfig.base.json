@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "useDefineForClassFields": false,
+    "baseUrl": ".",
+    "paths": {
+      "@engineering-observatory/shared-types": [
+        "libs/shared-types/src/index.ts"
+      ],
+      "@engineering-observatory/scanners": ["libs/scanners/src/index.ts"],
+      "@engineering-observatory/analyzer-engine": [
+        "libs/analyzer-engine/src/index.ts"
+      ],
+      "@engineering-observatory/frontend-intelligence": [
+        "libs/frontend-intelligence/src/index.ts"
+      ],
+      "@engineering-observatory/ai-adapter": ["libs/ai-adapter/src/index.ts"],
+      "@engineering-observatory/persistence": ["libs/persistence/src/index.ts"],
+      "@engineering-observatory/performance-engine": [
+        "libs/performance-engine/src/index.ts"
+      ]
+    },
+    "types": ["node", "vitest/globals"]
+  },
+  "exclude": ["node_modules", "dist", ".nx", ".observatory"]
+}

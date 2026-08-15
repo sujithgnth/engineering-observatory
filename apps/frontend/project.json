@@ -1,0 +1,25 @@
+{
+  "name": "frontend",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/frontend/src",
+  "tags": ["scope:frontend", "type:app", "runtime:browser"],
+  "implicitDependencies": ["shared-types"],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": { "command": "vite --config apps/frontend/vite.config.ts" }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/frontend"],
+      "options": {
+        "command": "vite build --config apps/frontend/vite.config.ts"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": { "command": "tsc -p apps/frontend/tsconfig.json --noEmit" }
+    }
+  }
+}

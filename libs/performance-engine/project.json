@@ -1,0 +1,16 @@
+{
+  "name": "performance-engine",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/performance-engine/src",
+  "tags": ["scope:performance", "type:domain", "runtime:node"],
+  "implicitDependencies": ["shared-types"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p libs/performance-engine/tsconfig.json --noEmit"
+      }
+    }
+  }
+}

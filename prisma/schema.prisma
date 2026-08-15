@@ -1,0 +1,86 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../libs/persistence/src/generated/prisma"
+  moduleFormat = "esm"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Analysis {
+  id                String             @id @db.Uuid
+  architectureGraph ArchitectureGraph?
+  files             AnalysisFile[]
+  nodes             ArchitectureNode[]
+  edges             ArchitectureEdge[]
+
+  @@map("analyses")
+}
+
+model ArchitectureGraph {
+  analysisId      String   @id @map("analysis_id") @db.Uuid
+  schemaVersion   String   @map("schema_version")
+  analyzerVersion String   @map("analyzer_version")
+  snapshotId      String   @map("snapshot_id") @db.Uuid
+  frameworks      String[]
+  issues          Json
+  health          Json
+  coverage        Json
+  createdAt       DateTime @default(now()) @map("created_at") @db.Timestamptz
+  updatedAt       DateTime @updatedAt @map("updated_at") @db.Timestamptz
+  analysis        Analysis @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+
+  @@map("architecture_graphs")
+}
+
+model AnalysisFile {
+  analysisId  String   @map("analysis_id") @db.Uuid
+  path        String
+  language    String
+  lineCount   Int      @map("line_count")
+  byteSize    Int      @map("byte_size")
+  contentHash String   @map("content_hash")
+  test        Boolean  @default(false) @map("is_test")
+  analysis    Analysis @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+
+  @@id([analysisId, path])
+  @@map("analysis_files")
+}
+
+model ArchitectureNode {
+  analysisId    String             @map("analysis_id") @db.Uuid
+  id            String
+  stableKey     String             @map("stable_key")
+  kind          String
+  name          String
+  framework     String
+  filePath      String             @map("file_path")
+  lineStart     Int?               @map("line_start")
+  lineEnd       Int?               @map("line_end")
+  metadata      Json
+  analysis      Analysis           @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+  outgoingEdges ArchitectureEdge[] @relation("ArchitectureEdgeSource")
+  incomingEdges ArchitectureEdge[] @relation("ArchitectureEdgeTarget")
+
+  @@id([analysisId, id])
+  @@unique([analysisId, stableKey])
+  @@map("architecture_nodes")
+}
+
+model ArchitectureEdge {
+  analysisId   String           @map("analysis_id") @db.Uuid
+  id           String
+  sourceNodeId String           @map("source_node_id")
+  targetNodeId String           @map("target_node_id")
+  kind         String
+  confidence   String
+  evidencePath String           @map("evidence_path")
+  evidenceLine Int?             @map("evidence_line")
+  analysis     Analysis         @relation(fields: [analysisId], references: [id], onDelete: Cascade)
+  sourceNode   ArchitectureNode @relation("ArchitectureEdgeSource", fields: [analysisId, sourceNodeId], references: [analysisId, id], onDelete: Cascade)
+  targetNode   ArchitectureNode @relation("ArchitectureEdgeTarget", fields: [analysisId, targetNodeId], references: [analysisId, id], onDelete: Cascade)
+
+  @@id([analysisId, id])
+  @@map("architecture_edges")
+}

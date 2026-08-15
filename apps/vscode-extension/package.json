@@ -1,0 +1,116 @@
+{
+  "name": "frontend-intelligence-vscode",
+  "displayName": "Engineering Observatory",
+  "description": "Explore deterministic frontend architecture and change impact from VS Code.",
+  "version": "0.1.0",
+  "private": true,
+  "publisher": "local-development",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "activationEvents": [
+    "onCommand:frontendIntelligence.analyzeArchitecture",
+    "onCommand:frontendIntelligence.openDashboard",
+    "onCommand:frontendIntelligence.showDependencies",
+    "onCommand:frontendIntelligence.showImpact",
+    "onCommand:frontendIntelligence.findStateFlow",
+    "onCommand:frontendIntelligence.findApiFlow",
+    "onCommand:frontendIntelligence.explainComponent"
+  ],
+  "main": "./dist/extension.cjs",
+  "contributes": {
+    "commands": [
+      {
+        "command": "frontendIntelligence.analyzeArchitecture",
+        "title": "Engineering Observatory: Analyze Workspace"
+      },
+      {
+        "command": "frontendIntelligence.openDashboard",
+        "title": "Engineering Observatory: Open Architecture Map"
+      },
+      {
+        "command": "frontendIntelligence.showDependencies",
+        "title": "Engineering Observatory: Show File Dependencies"
+      },
+      {
+        "command": "frontendIntelligence.showImpact",
+        "title": "Engineering Observatory: Show Change Impact"
+      },
+      {
+        "command": "frontendIntelligence.findStateFlow",
+        "title": "Engineering Observatory: Find State Flow"
+      },
+      {
+        "command": "frontendIntelligence.findApiFlow",
+        "title": "Engineering Observatory: Find API Flow"
+      },
+      {
+        "command": "frontendIntelligence.explainComponent",
+        "title": "Engineering Observatory: Ask Architect About File"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "frontendIntelligence.analyzeArchitecture",
+          "when": "resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx",
+          "group": "navigation@100"
+        },
+        {
+          "command": "frontendIntelligence.showDependencies",
+          "when": "resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx",
+          "group": "navigation@101"
+        },
+        {
+          "command": "frontendIntelligence.showImpact",
+          "when": "resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx",
+          "group": "navigation@102"
+        },
+        {
+          "command": "frontendIntelligence.findStateFlow",
+          "when": "resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx",
+          "group": "navigation@103"
+        },
+        {
+          "command": "frontendIntelligence.findApiFlow",
+          "when": "resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx",
+          "group": "navigation@104"
+        },
+        {
+          "command": "frontendIntelligence.explainComponent",
+          "when": "resourceExtname == .ts || resourceExtname == .tsx || resourceExtname == .js || resourceExtname == .jsx",
+          "group": "navigation@105"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Engineering Observatory",
+      "properties": {
+        "frontendIntelligence.apiBaseUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:3333/api/v1",
+          "description": "Engineering Observatory backend API URL."
+        },
+        "frontendIntelligence.dashboardUrl": {
+          "type": "string",
+          "default": "http://127.0.0.1:5173",
+          "description": "Engineering Observatory dashboard URL."
+        },
+        "frontendIntelligence.analysisId": {
+          "type": "string",
+          "default": "",
+          "scope": "resource",
+          "description": "Last immutable analysis used by architecture commands."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "nx run vscode-extension:build",
+    "typecheck": "nx run vscode-extension:typecheck"
+  }
+}

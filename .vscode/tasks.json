@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Frontend Intelligence Extension",
+      "type": "shell",
+      "command": "npx nx run vscode-extension:build",
+      "problemMatcher": "$tsc",
+      "group": "build"
+    }
+  ]
+}

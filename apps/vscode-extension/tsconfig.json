@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/vscode-extension",
+    "rootDir": "../..",
+    "types": ["node", "vscode"]
+  },
+  "include": ["src/**/*.ts"]
+}

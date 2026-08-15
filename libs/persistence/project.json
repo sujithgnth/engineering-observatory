@@ -1,0 +1,14 @@
+{
+  "name": "persistence",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/persistence/src",
+  "tags": ["scope:backend", "type:data-access", "runtime:node"],
+  "implicitDependencies": ["shared-types"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": { "command": "tsc -p libs/persistence/tsconfig.json --noEmit" }
+    }
+  }
+}

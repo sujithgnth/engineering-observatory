@@ -1,0 +1,16 @@
+{
+  "name": "analyzer-engine",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "libs/analyzer-engine/src",
+  "tags": ["scope:analysis", "type:domain", "runtime:node"],
+  "implicitDependencies": ["scanners", "shared-types"],
+  "targets": {
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p libs/analyzer-engine/tsconfig.json --noEmit"
+      }
+    }
+  }
+}

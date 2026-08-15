@@ -1,0 +1,190 @@
+{
+  "name": "engineering-observatory",
+  "version": "0.1.0",
+  "description": "Evidence-first desktop architecture intelligence for frontend and full-stack TypeScript repositories.",
+  "author": "Sujeith Gopinath",
+  "private": true,
+  "type": "module",
+  "main": "dist/apps/desktop/main.cjs",
+  "scripts": {
+    "dev": "nx run-many -t dev --projects=frontend,backend,worker --parallel=3",
+    "dev:frontend": "nx run frontend:dev",
+    "dev:backend": "nx run backend:dev",
+    "dev:worker": "nx run worker:dev",
+    "dev:performance-runner": "nx run performance-runner:dev",
+    "desktop:prepare": "npm run db:generate --silent && nx run-many -t build --projects=frontend,backend,worker,performance-runner,mcp-server,desktop",
+    "desktop:dev": "npm run desktop:prepare && electron .",
+    "desktop:smoke": "node tools/desktop-smoke.mjs",
+    "desktop:pack": "npm run desktop:prepare && electron-builder --dir --publish never",
+    "desktop:dist": "npm run desktop:prepare && electron-builder --publish never",
+    "mcp:dev": "nx run mcp-server:dev",
+    "mcp:build": "nx run mcp-server:build",
+    "mcp:serve": "node dist/apps/mcp-server/main.js",
+    "mcp:smoke": "npm run mcp:build --silent && node tools/mcp-smoke.mjs",
+    "db:generate": "prisma generate",
+    "db:migrate": "npm run db:generate --silent && tsx libs/persistence/src/migrate.ts",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "pretypecheck": "npm run db:generate --silent",
+    "typecheck": "nx run-many -t typecheck --all",
+    "pretest": "npm run db:generate --silent",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prebuild": "npm run db:generate --silent",
+    "build": "nx run-many -t build --all",
+    "quality:bundle": "node tools/run-bundle-analysis.mjs",
+    "quality:lighthouse": "node tools/run-lighthouse.mjs",
+    "quality": "npm run quality:bundle && npm run quality:lighthouse",
+    "smoke:e2e": "node tools/smoke-e2e.mjs",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.117.1",
+    "@google/genai": "2.17.1",
+    "@modelcontextprotocol/server": "2.0.0",
+    "@monaco-editor/react": "4.7.0",
+    "@nestjs/common": "11.2.1",
+    "@nestjs/core": "11.2.1",
+    "@nestjs/platform-express": "11.2.1",
+    "@octokit/rest": "22.0.1",
+    "@prisma/adapter-pg": "7.9.1",
+    "@prisma/client": "7.9.1",
+    "@tailwindcss/vite": "4.3.3",
+    "@tanstack/react-query": "5.101.4",
+    "@xyflow/react": "12.11.3",
+    "autocannon": "8.0.0",
+    "express": "5.2.1",
+    "fast-glob": "3.3.3",
+    "fflate": "0.8.3",
+    "helmet": "8.3.0",
+    "lucide-react": "1.31.0",
+    "monaco-editor": "0.56.0",
+    "multer": "2.2.0",
+    "openai": "7.4.0",
+    "pg": "8.23.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "recharts": "3.10.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
+    "tar": "7.5.22",
+    "ts-morph": "28.0.0",
+    "yauzl": "3.4.0",
+    "zod": "4.4.3",
+    "zustand": "5.0.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@modelcontextprotocol/client": "2.0.0",
+    "@nestjs/testing": "11.2.1",
+    "@playwright/test": "1.62.1",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.2",
+    "@types/autocannon": "7.12.7",
+    "@types/express": "5.0.6",
+    "@types/multer": "2.0.0",
+    "@types/node": "26.2.0",
+    "@types/pg": "8.21.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@types/supertest": "7.2.1",
+    "@types/vscode": "1.125.0",
+    "@types/yauzl": "3.4.0",
+    "@vitejs/plugin-react": "6.0.5",
+    "electron": "43.4.0",
+    "electron-builder": "26.15.3",
+    "eslint": "10.0.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.4",
+    "jsdom": "30.0.1",
+    "lighthouse": "13.4.1",
+    "nx": "23.1.1",
+    "prettier": "3.9.6",
+    "prisma": "7.9.1",
+    "rollup-plugin-visualizer": "7.1.1",
+    "supertest": "7.2.2",
+    "tsup": "8.5.1",
+    "tsx": "4.23.12",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.67.0",
+    "vite": "8.2.1",
+    "vite-plugin-static-copy": "4.1.1",
+    "vitest": "4.1.10"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "overrides": {
+    "brace-expansion": "5.0.9",
+    "dompurify": "3.4.13",
+    "esbuild": "0.28.2",
+    "uuid": "11.1.1"
+  },
+  "allowScripts": {
+    "@google/genai@2.17.1": true,
+    "@prisma/engines@7.9.1": true,
+    "nx@23.1.1": true,
+    "esbuild@0.28.2": true,
+    "fsevents@2.3.2": true,
+    "fsevents@2.3.3": true,
+    "prisma@7.9.1": true,
+    "protobufjs@7.6.5": true
+  },
+  "build": {
+    "appId": "dev.engineeringobservatory.frontendintelligence",
+    "productName": "Engineering Observatory",
+    "asar": true,
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/apps/desktop/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "dist/apps/backend",
+        "to": "services/backend"
+      },
+      {
+        "from": "dist/apps/worker",
+        "to": "services/worker"
+      },
+      {
+        "from": "dist/apps/performance-runner",
+        "to": "services/performance-runner"
+      },
+      {
+        "from": "dist/apps/mcp-server",
+        "to": "services/mcp-server"
+      },
+      {
+        "from": "dist/apps/frontend",
+        "to": "frontend"
+      },
+      {
+        "from": "libs/persistence/src/migrations",
+        "to": "migrations"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "hardenedRuntime": true,
+      "target": [
+        "dmg",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "category": "Development",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    }
+  }
+}

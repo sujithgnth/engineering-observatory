@@ -1,0 +1,45 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_USER: observatory
+          POSTGRES_PASSWORD: observatory
+          POSTGRES_DB: observatory
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U observatory -d observatory"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      DATABASE_URL: postgres://observatory:observatory@127.0.0.1:5432/observatory
+      RUN_DB_INTEGRATION_TESTS: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.19.0
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: npm run db:migrate
+      - run: npm run verify
+      - run: npm run quality
+      - name: Upload measured quality reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-quality-reports
+          path: artifacts/
+          if-no-files-found: warn

@@ -1,0 +1,29 @@
+{
+  "name": "mcp-server",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/mcp-server/src",
+  "tags": ["scope:developer-tools", "type:app", "runtime:node"],
+  "implicitDependencies": ["shared-types"],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsx --tsconfig apps/mcp-server/tsconfig.json apps/mcp-server/src/main.ts"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/mcp-server"],
+      "options": {
+        "command": "tsup apps/mcp-server/src/main.ts --format esm --platform node --sourcemap --out-dir dist/apps/mcp-server --clean"
+      }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -p apps/mcp-server/tsconfig.json --noEmit"
+      }
+    }
+  }
+}
