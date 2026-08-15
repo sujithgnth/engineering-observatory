@@ -12,7 +12,7 @@
     "dev:backend": "nx run backend:dev",
     "dev:worker": "nx run worker:dev",
     "dev:performance-runner": "nx run performance-runner:dev",
-    "desktop:prepare": "npm run db:generate --silent && nx run-many -t build --projects=frontend,backend,worker,performance-runner,mcp-server,desktop",
+    "desktop:prepare": "npm run db:generate --silent && nx run-many -t build --projects=frontend,backend,worker,performance-runner,mcp-server,desktop --outputStyle=static",
     "desktop:dev": "npm run desktop:prepare && electron .",
     "desktop:smoke": "node tools/desktop-smoke.mjs",
     "desktop:pack": "npm run desktop:prepare && electron-builder --dir --publish never",
