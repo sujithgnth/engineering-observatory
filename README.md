@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./docs/assets/engineering-observatory-cover.png" alt="An observatory scanning a software dependency graph" width="100%" />
+</p>
+
 # Engineering Observatory
 
 Engineering Observatory is a local-first developer tool for understanding the health and architecture of a TypeScript repository before changing it.
@@ -71,24 +75,32 @@ The API, analysis worker, and performance runner are separate processes. Reposit
 | AI explanations    | OpenAI, Claude, Gemini, Ollama                         |
 | Developer adapters | VS Code extension, read-only MCP server                |
 
-## Run the Electron app
+## Quick start: Electron app
 
-You need Node.js 22.19+, npm, Docker, and PostgreSQL.
+This is the recommended way to run the project. You need Node.js 22.19+, npm, and Docker Desktop with Docker Compose.
 
 ```bash
+git clone https://github.com/sujithgnth/engineering-observatory.git
+cd engineering-observatory
 npm ci
 cp .env.example .env
 docker compose up -d postgres
 npm run desktop:dev
 ```
 
-The desktop process applies the database migrations and starts the API, analysis worker, performance runner, and UI. PostgreSQL remains an external dependency in this portfolio version.
+The first launch builds the workspace, applies database migrations, and opens the Electron app. The desktop process manages the API, analysis worker, performance runner, and UI; PostgreSQL continues to run in Docker.
 
 Inside the app:
 
 - **Local folder** opens the native directory picker and excludes generated folders, links, and oversized files.
 - **GitHub URL** works without credentials for public repositories. Private repositories use a fine-grained read-only token encrypted through the operating system's credential backend.
 - **Archive** accepts ZIP, TAR, TAR.GZ, and TGZ snapshots.
+
+When you are finished, quit the Electron app and stop PostgreSQL:
+
+```bash
+docker compose down
+```
 
 To create a local application bundle:
 

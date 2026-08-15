@@ -1,6 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#071226" />
-  <path d="M14 18h36v7H14zm0 21h36v7H14z" fill="#22d3ee" />
-  <circle cx="25" cy="32" r="6" fill="#f8fafc" />
-  <circle cx="43" cy="32" r="6" fill="#fbbf24" />
+  <defs>
+    <linearGradient id="signal" x1="16" y1="12" x2="50" y2="52">
+      <stop stop-color="#67e8f9" />
+      <stop offset="1" stop-color="#2563eb" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#030718" />
+  <circle
+    cx="32"
+    cy="27"
+    r="16"
+    fill="#071b36"
+    stroke="url(#signal)"
+    stroke-width="3"
+  />
+  <path d="M32 27 44 18A16 16 0 0 1 48 27Z" fill="#22d3ee" opacity=".28" />
+  <path
+    d="M32 27 44 18"
+    stroke="#a5f3fc"
+    stroke-width="2.5"
+    stroke-linecap="round"
+  />
+  <circle cx="32" cy="27" r="4.5" fill="#f8fafc" />
+  <path
+    d="m16 50 16-9 16 9M32 41v9"
+    fill="none"
+    stroke="#38bdf8"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <circle cx="16" cy="50" r="3" fill="#818cf8" />
+  <circle cx="32" cy="50" r="3" fill="#22d3ee" />
+  <circle cx="48" cy="50" r="3" fill="#818cf8" />
 </svg>
