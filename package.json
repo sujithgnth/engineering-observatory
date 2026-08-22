@@ -36,6 +36,7 @@
     "quality:bundle": "node tools/run-bundle-analysis.mjs",
     "quality:lighthouse": "node tools/run-lighthouse.mjs",
     "quality": "npm run quality:bundle && npm run quality:lighthouse",
+    "site:check": "node tools/site-smoke.mjs",
     "smoke:e2e": "node tools/smoke-e2e.mjs",
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm test && npm run build"
   },
@@ -117,6 +118,7 @@
   },
   "overrides": {
     "brace-expansion": "5.0.9",
+    "deepmerge-ts": "8.0.1",
     "dompurify": "3.4.13",
     "esbuild": "0.28.2",
     "uuid": "11.1.1"
@@ -171,6 +173,7 @@
     "mac": {
       "category": "public.app-category.developer-tools",
       "hardenedRuntime": true,
+      "icon": "build/icon.icns",
       "target": [
         "dmg",
         "zip"

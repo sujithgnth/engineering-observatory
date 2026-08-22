@@ -4,8 +4,14 @@
 
 # Engineering Observatory
 
+<p align="center">
+  <strong>Languages:</strong> TypeScript · JavaScript · HTML · CSS · SQL · Prisma Schema
+</p>
+
 > [!IMPORTANT]
 > **Status: Work in progress.** The local desktop workflow and deterministic analysis core are usable today, but this is not a finished hosted product. Release signing, multi-tenant authorization, hosted isolation, and broader analyzer coverage remain active work.
+
+**[Visit the project website](https://sujithgnth.github.io/engineering-observatory/)** · **[Browse desktop preview releases](https://github.com/sujithgnth/engineering-observatory/releases)**
 
 Engineering Observatory is a local-first developer tool for understanding the health and architecture of a TypeScript repository before changing it.
 
@@ -112,7 +118,7 @@ npm run desktop:smoke
 npm run desktop:pack
 ```
 
-The package is intentionally not presented as a signed public release yet. macOS signing/notarization, final icons, trusted updates, and Windows/Linux release testing remain release work.
+Preview packages are published as unsigned work-in-progress releases. macOS signing/notarization, final installer branding, trusted updates, and Windows/Linux release testing remain release work.
 
 ## Run it in the browser
 
