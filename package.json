@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Evidence-first desktop architecture intelligence for frontend and full-stack TypeScript repositories.",
   "author": "Sujeith Gopinath",
+  "license": "UNLICENSED",
   "private": true,
   "type": "module",
   "main": "dist/apps/desktop/main.cjs",

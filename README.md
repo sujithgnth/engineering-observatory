@@ -184,4 +184,10 @@ I keep those limits visible because a developer tool is more useful when it says
 
 ## License
 
-MIT
+**Proprietary — all rights reserved.** This repository is public for portfolio
+review only. Copying, modification, redistribution, reuse, or incorporation into
+another project is not permitted except for rights required by GitHub's Terms of
+Service or with prior written permission. See [LICENSE](LICENSE).
+
+The restriction applies prospectively. Versions already released under MIT
+remain available under the MIT terms that accompanied those versions.

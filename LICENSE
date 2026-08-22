@@ -1,21 +1,51 @@
-MIT License
+PROPRIETARY LICENSE
+ALL RIGHTS RESERVED
 
 Copyright (c) 2026 Sujeith Gopinath
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Ownership
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+All original source code, documentation, designs, and assets in this repository
+(the "Content") are owned by Sujeith Gopinath, unless a file or third-party
+component states otherwise.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. No Permission Granted
+
+Except for the limited rights required by GitHub's Terms of Service to host,
+display, and provide repository functionality, no licence is granted to any
+person or entity to:
+
+- copy, reproduce, download, or use the Content;
+- modify, adapt, translate, merge, or create derivative works from the Content;
+- publish, distribute, sublicense, sell, rent, or otherwise transfer the Content;
+- incorporate the Content, in whole or in part, into another project, product,
+  service, or commercial or non-commercial work.
+
+Viewing the Content on GitHub for portfolio evaluation does not grant any
+additional rights.
+
+3. Written Permission
+
+Any use not expressly allowed by this notice requires prior written permission
+from Sujeith Gopinath. Permission for one use does not grant permission for any
+other use.
+
+4. Third-Party Materials
+
+Third-party libraries, dependencies, trademarks, and assets remain subject to
+their respective licences and rights. This notice applies only to Content for
+which Sujeith Gopinath owns the copyright.
+
+5. Earlier Versions
+
+This notice applies prospectively to Content first published with it. It does
+not revoke rights that were validly granted under a licence attached to an
+earlier version or copy of the Content.
+
+6. Disclaimer
+
+THE CONTENT IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. TO THE MAXIMUM EXTENT
+PERMITTED BY LAW, THE COPYRIGHT HOLDER SHALL NOT BE LIABLE FOR ANY CLAIM,
+DAMAGES, OR OTHER LIABILITY ARISING FROM THE CONTENT OR ITS USE.
