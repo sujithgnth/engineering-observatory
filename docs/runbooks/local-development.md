@@ -22,7 +22,7 @@ npm run desktop:pack
 npm run desktop:dist
 ```
 
-`desktop:smoke` proves the managed services, preload bridge, and source UI render. `desktop:pack` creates an unpacked app under `release/`; `desktop:dist` creates current-platform installers. Local artifacts are unsigned. Do not present them as a public release until product icons, signing/notarization, trusted updates, and Windows/Linux release tests exist.
+`desktop:smoke` proves the managed services, preload bridge, and source UI render. `desktop:pack` creates an unpacked app under `release/`; `desktop:dist` creates current-platform installers. Local artifacts are unsigned. Any public preview must be marked as a pre-release and explicitly state the supported architecture, unsigned/notarized status, external PostgreSQL prerequisite, and verification boundary. A stable desktop release still requires signing/notarization, trusted updates, and Windows/Linux release tests.
 
 ## Optional MCP server
 

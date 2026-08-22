@@ -66,7 +66,7 @@ Local measurement values are deliberately omitted from this durable status docum
 - AI adapters compile against pinned SDKs and share a validated output contract, but live external-provider calls were not executed without user credentials. Ollama was also not running in the final environment.
 - The dashboard is dark-theme only and needs broader keyboard/focus/contrast/reduced-motion plus automated graph-interaction browser coverage before a public release.
 - The VS Code companion is built and command-complete but is not yet packaged/signed/published to the Marketplace or validated in remote-container workspaces.
-- The Electron application is packageable and its macOS arm64 bundle has passed a local smoke run, but it still uses the default icon and is not signed, notarized, auto-updated, or release-tested on Windows/Linux. PostgreSQL remains an external prerequisite.
+- The Electron application is packageable and its macOS arm64 bundle has passed a local smoke run with the product icon, but it is not signed, notarized, auto-updated, or release-tested on Windows/Linux. PostgreSQL remains an external prerequisite.
 - CI verifies migration, code quality, the Observatory bundle composition, and Lighthouse budgets; it does not yet boot all processes for the opt-in load-generating smoke test.
 
 These are interview strengths when stated plainly: the boundaries show what the current evidence proves and what a hosted production architecture must add.

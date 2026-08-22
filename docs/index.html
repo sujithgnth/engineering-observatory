@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Engineering Observatory is a local-first developer tool that turns deterministic repository analysis into source-backed engineering evidence."
+    />
+    <meta name="theme-color" content="#050816" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Engineering Observatory" />
+    <meta
+      property="og:description"
+      content="Understand a frontend before you change it. Deterministic architecture, risk, security, and measured performance evidence."
+    />
+    <meta
+      property="og:url"
+      content="https://sujithgnth.github.io/engineering-observatory/"
+    />
+    <meta
+      property="og:image"
+      content="https://sujithgnth.github.io/engineering-observatory/assets/engineering-observatory-social-preview.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Engineering Observatory" />
+    <meta
+      name="twitter:description"
+      content="Evidence-first repository intelligence for frontend and full-stack TypeScript systems."
+    />
+    <meta
+      name="twitter:image"
+      content="https://sujithgnth.github.io/engineering-observatory/assets/engineering-observatory-social-preview.jpg"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./site.css" />
+    <script src="./site.js" defer></script>
+    <title>
+      Engineering Observatory — Evidence-first repository intelligence
+    </title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="site-shell">
+      <header class="site-header" data-header>
+        <a class="brand" href="#top" aria-label="Engineering Observatory home">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-orbit"></span>
+            <span class="brand-core"></span>
+          </span>
+          <span>Engineering Observatory</span>
+        </a>
+        <nav aria-label="Primary navigation">
+          <a href="#principles">Principles</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#desktop">Desktop</a>
+          <a
+            class="nav-cta"
+            href="https://github.com/sujithgnth/engineering-observatory"
+          >
+            View source
+            <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </header>
+
+      <main id="main-content">
+        <section class="hero" id="top">
+          <div class="hero-copy" data-reveal>
+            <div class="eyebrow-row">
+              <span class="status-pill"><span></span> Work in progress</span>
+              <span class="eyebrow">Local-first developer intelligence</span>
+            </div>
+            <h1>
+              Understand a repository
+              <span>before you change it.</span>
+            </h1>
+            <p class="hero-lede">
+              Engineering Observatory maps architecture, detects engineering
+              risks, and records measured performance evidence. Every result
+              links back to the source that produced it.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="https://github.com/sujithgnth/engineering-observatory/releases"
+              >
+                Get the desktop preview
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="button button-secondary"
+                href="https://github.com/sujithgnth/engineering-observatory#quick-start-electron-app"
+              >
+                Run from source
+              </a>
+            </div>
+            <p class="release-note">
+              Preview builds are unsigned and currently validated on macOS Apple
+              Silicon. PostgreSQL is an external prerequisite.
+            </p>
+          </div>
+
+          <div class="hero-visual" data-reveal data-delay="1">
+            <div class="visual-frame">
+              <div class="window-bar" aria-hidden="true">
+                <div class="window-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span>repository / architecture</span>
+                <span class="window-live"><i></i> evidence live</span>
+              </div>
+              <div class="visual-image">
+                <img
+                  src="./assets/engineering-observatory-cover.png"
+                  alt="An observatory scanning a connected software architecture graph"
+                  width="1536"
+                  height="720"
+                />
+                <div class="scan-line" aria-hidden="true"></div>
+                <div class="metric-card metric-one" aria-hidden="true">
+                  <span>Architecture</span>
+                  <strong>Source-backed</strong>
+                </div>
+                <div class="metric-card metric-two" aria-hidden="true">
+                  <span>Runtime</span>
+                  <strong>Measured only</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="evidence-strip" data-reveal data-delay="2">
+            <div><span>01</span><strong>Deterministic analysis</strong></div>
+            <div><span>02</span><strong>No repository execution</strong></div>
+            <div><span>03</span><strong>Optional AI explanation</strong></div>
+            <div><span>04</span><strong>Measured performance</strong></div>
+          </div>
+        </section>
+
+        <section class="section" id="principles">
+          <div class="section-heading" data-reveal>
+            <p class="kicker">The operating model</p>
+            <h2>Measure first. Explain second.</h2>
+            <p>
+              The useful part of a developer tool is evidence you can reproduce,
+              not a confident paragraph generated from incomplete context.
+            </p>
+          </div>
+
+          <div class="principle-grid">
+            <article class="principle-card" data-reveal>
+              <span class="card-index">01</span>
+              <div class="card-icon" aria-hidden="true">⌁</div>
+              <h3>Evidence before opinion</h3>
+              <p>
+                Findings keep a stable rule ID, severity, confidence, source
+                location, structured evidence, limitations, and fingerprint.
+              </p>
+            </article>
+            <article class="principle-card" data-reveal data-delay="1">
+              <span class="card-index">02</span>
+              <div class="card-icon" aria-hidden="true">◎</div>
+              <h3>Hostile-input boundary</h3>
+              <p>
+                Connected repositories are inspected as data. Their packages,
+                builds, scripts, and modules are never executed by the analyzer.
+              </p>
+            </article>
+            <article class="principle-card" data-reveal data-delay="2">
+              <span class="card-index">03</span>
+              <div class="card-icon" aria-hidden="true">△</div>
+              <h3>AI stays optional</h3>
+              <p>
+                OpenAI, Claude, Gemini, or Ollama can explain a selected
+                finding. They cannot rewrite canonical evidence, scores, or
+                measurements.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section pipeline-section">
+          <div class="section-heading compact" data-reveal>
+            <p class="kicker">One evidence pipeline</p>
+            <h2>From repository to defensible review.</h2>
+          </div>
+          <ol class="pipeline" data-reveal>
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Acquire</strong
+                ><small>Local folder, archive, or GitHub</small>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Snapshot</strong
+                ><small>Bounded, immutable source input</small>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Analyze</strong
+                ><small>AST graph and deterministic rules</small>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Review</strong
+                ><small>Dashboard, impact paths, evidence</small>
+              </div>
+            </li>
+            <li>
+              <span>05</span>
+              <div>
+                <strong>Explain</strong
+                ><small>Optional model-generated guidance</small>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="capabilities">
+          <div class="section-heading" data-reveal>
+            <p class="kicker">What it investigates</p>
+            <h2>A practical engineering health surface.</h2>
+            <p>
+              The current portfolio MVP focuses on frontend and full-stack
+              TypeScript systems, with clear boundaries around what static
+              analysis can and cannot prove.
+            </p>
+          </div>
+
+          <div class="capability-grid">
+            <article class="capability-card capability-wide" data-reveal>
+              <div class="capability-topline">
+                <span>Architecture intelligence</span>
+                <span class="signal"><i></i> graph ready</span>
+              </div>
+              <h3>
+                Follow components, routes, state, services, and API calls.
+              </h3>
+              <p>
+                Typed nodes and edges power focused graph views, change-impact
+                paths, source previews, and architecture review without
+                duplicating the analysis engine.
+              </p>
+              <div class="mini-graph" aria-hidden="true">
+                <span class="node n1">Route</span>
+                <span class="node n2">Page</span>
+                <span class="node n3">Store</span>
+                <span class="node n4">API</span>
+                <svg viewBox="0 0 680 150" preserveAspectRatio="none">
+                  <path
+                    d="M80 75 C180 75 175 36 280 36 S390 114 490 114 S580 75 625 75"
+                  />
+                  <path d="M280 36 C320 70 330 112 395 112" />
+                </svg>
+              </div>
+            </article>
+
+            <article class="capability-card" data-reveal data-delay="1">
+              <span class="capability-label">Static analysis</span>
+              <h3>Risks with inspectable evidence.</h3>
+              <p>
+                Frontend, backend, database, dependency, and security candidates
+                include confidence, limitations, remediation, and stable
+                identity.
+              </p>
+              <ul class="tag-list" aria-label="Static analysis areas">
+                <li>Complexity</li>
+                <li>Validation</li>
+                <li>Queries</li>
+                <li>Secrets</li>
+              </ul>
+            </article>
+
+            <article class="capability-card" data-reveal data-delay="2">
+              <span class="capability-label">Runtime evidence</span>
+              <h3>Performance without scaling theatre.</h3>
+              <p>
+                k6 and autocannon runs record requested and achieved load,
+                latency percentiles, throughput, errors, thresholds, and runner
+                limits.
+              </p>
+              <div class="metric-row" aria-label="Recorded performance metrics">
+                <span>RPS</span><span>p95</span><span>errors</span
+                ><span>limits</span>
+              </div>
+            </article>
+
+            <article class="capability-card" data-reveal>
+              <span class="capability-label">Delivery surfaces</span>
+              <h3>One core, several useful adapters.</h3>
+              <p>
+                Electron, browser, VS Code, and a read-only MCP server share the
+                same scanner, rules, persistence, and evidence contracts.
+              </p>
+              <ul class="tag-list" aria-label="Delivery surfaces">
+                <li>Electron</li>
+                <li>React</li>
+                <li>VS Code</li>
+                <li>MCP</li>
+              </ul>
+            </article>
+
+            <article
+              class="capability-card capability-ai"
+              data-reveal
+              data-delay="1"
+            >
+              <span class="capability-label">Explanation layer</span>
+              <h3>Provider choice without provider authority.</h3>
+              <p>
+                Provider adapters return explanation, production impact,
+                recommendations, alternatives, and trade-offs for an existing
+                finding.
+              </p>
+              <div class="provider-list" aria-label="Supported AI providers">
+                <span>OpenAI</span><span>Claude</span><span>Gemini</span
+                ><span>Ollama</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section desktop-section" id="desktop">
+          <div class="desktop-copy" data-reveal>
+            <p class="kicker">Desktop preview</p>
+            <h2>Keep the source boundary on your machine.</h2>
+            <p>
+              Electron provides native folder selection and manages the local
+              API, worker, performance runner, and dashboard. PostgreSQL remains
+              a visible external dependency instead of being hidden inside the
+              app.
+            </p>
+            <div class="desktop-actions">
+              <a
+                class="button button-primary"
+                href="https://github.com/sujithgnth/engineering-observatory/releases"
+              >
+                Browse preview releases
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a
+                class="text-link"
+                href="https://github.com/sujithgnth/engineering-observatory/blob/main/docs/runbooks/local-development.md"
+              >
+                Read the runbook <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="terminal"
+            data-reveal
+            data-delay="1"
+            aria-label="Local setup command"
+          >
+            <div class="terminal-bar">
+              <span>Terminal</span>
+              <button
+                type="button"
+                data-copy-command
+                aria-label="Copy setup commands"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code><span class="prompt">$</span> git clone https://github.com/sujithgnth/engineering-observatory.git
+<span class="prompt">$</span> cd engineering-observatory
+<span class="prompt">$</span> npm ci
+<span class="prompt">$</span> cp .env.example .env
+<span class="prompt">$</span> docker compose up -d postgres
+<span class="prompt">$</span> npm run desktop:dev</code></pre>
+            <p>Requires Node.js 22.19+, npm, and Docker Desktop.</p>
+          </div>
+        </section>
+
+        <section class="section stack-section">
+          <div class="section-heading compact" data-reveal>
+            <p class="kicker">Built as a system</p>
+            <h2>Architecture decisions you can discuss in an interview.</h2>
+          </div>
+          <div class="stack-list" data-reveal>
+            <span>TypeScript</span><span>React</span><span>NestJS</span
+            ><span>Electron</span> <span>Nx</span><span>PostgreSQL</span
+            ><span>Prisma</span><span>React Query</span> <span>Recharts</span
+            ><span>k6</span><span>autocannon</span><span>Lighthouse</span>
+          </div>
+        </section>
+
+        <section class="section honesty-section" data-reveal>
+          <div>
+            <p class="kicker">Honest status</p>
+            <h2>Production-shaped, not production-finished.</h2>
+          </div>
+          <div>
+            <p>
+              The local workflow and deterministic analysis core are usable. The
+              project still needs release signing, automatic updates, broader
+              analyzer coverage, hosted authentication and tenant isolation, and
+              release validation beyond macOS Apple Silicon.
+            </p>
+            <a
+              class="text-link"
+              href="https://github.com/sujithgnth/engineering-observatory/blob/main/docs/implementation-status.md"
+            >
+              See implementation status <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="final-cta" data-reveal>
+          <p class="kicker">Engineering Observatory</p>
+          <h2>Find engineering risks you can defend with evidence.</h2>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://github.com/sujithgnth/engineering-observatory"
+            >
+              Explore the repository <span aria-hidden="true">↗</span>
+            </a>
+            <a
+              class="button button-secondary"
+              href="https://github.com/sujithgnth/engineering-observatory/releases"
+            >
+              Desktop releases
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark" aria-hidden="true">
+            <span class="brand-orbit"></span><span class="brand-core"></span>
+          </span>
+          <span>Engineering Observatory</span>
+        </a>
+        <p>Designed and engineered by Sujeith Gopinath.</p>
+        <p>Work in progress · <span data-year>2026</span></p>
+      </footer>
+    </div>
+  </body>
+</html>
