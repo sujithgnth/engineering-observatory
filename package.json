@@ -100,7 +100,7 @@
     "eslint-plugin-react-refresh": "0.5.4",
     "jsdom": "30.0.1",
     "lighthouse": "13.4.1",
-    "nx": "23.1.1",
+    "nx": "23.3.0",
     "prettier": "3.9.6",
     "prisma": "7.9.1",
     "rollup-plugin-visualizer": "7.1.1",
